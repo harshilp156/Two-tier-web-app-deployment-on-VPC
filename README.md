@@ -67,7 +67,10 @@ Number of private subnets : 2
 
 NAT gateways : 1 per avaibility zones
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(461).png?token=GHSAT0AAAAAACNELBHDSZCW4625R3R5PDRQZNS3LPA)
+
+![App Screenshot](screenshots/Screenshot (461).png)
+![Alt text](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(461).png?token=GHSAT0AAAAAACNELBHDSZCW4625R3R5PDRQZNS3LPA.jpg)
+
 
 
 
