@@ -13,7 +13,6 @@ This project demonstated how to create VPC (virtual private cloud) that you can 
 As per the below architecture diagram,the vpc has public and private subnet in two Avaibility zones.
  
 ![vpc-example-private-subnets](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/764a426d-cca0-4c3c-9e24-508604257c72)
--49a2-4478-803a-dfafda4d37df)
 
 
 Each public subnet has NAT gateway and an Application load balancer node.
