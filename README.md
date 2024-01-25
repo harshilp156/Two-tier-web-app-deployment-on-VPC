@@ -202,10 +202,10 @@ Now I have created html file using vim edior.
   vim index.html
 ```
 ## Index.html Code for private subnets in us-east-1a
- - [index.html]()
+ - [index.html](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/blob/main/index1a.html)
 
 ## Index.html Code for private subnets in us-east-1b
- - [index.html]()
+ - [index.html](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/blob/main/index1a.html)
 
 
 ## Now run the html file of both private subnets on python server
