@@ -12,7 +12,8 @@ This project demonstated how to create VPC (virtual private cloud) that you can 
 
 As per the below architecture diagram,the vpc has public and private subnet in two Avaibility zones.
  
-![App Screenshot](https://docs.aws.amazon.com/images/vpc/latest/userguide/images/vpc-example-private-subnets.png)
+![vpc-example-private-subnets](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/764a426d-cca0-4c3c-9e24-508604257c72)
+-49a2-4478-803a-dfafda4d37df)
 
 
 Each public subnet has NAT gateway and an Application load balancer node.
@@ -68,9 +69,7 @@ Number of private subnets : 2
 NAT gateways : 1 per avaibility zones
 
 
-
-
-![Alt text](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(461).png?token=GHSAT0AAAAAACNELBHDSZCW4625R3R5PDRQZNS3LPA.jpg)
+![App Screenshot](screenshots/Screenshot (461).png?raw=true "ss")
 
 
 
@@ -121,16 +120,12 @@ Maximum Desired capacity : 4
 
 Here I have selected 1 instances as my Minimum capacity and 4 instance as my maximum capacity,the auto scaling group will launch and terminate instances according to the demand.
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(466).png?token=GHSAT0AAAAAACNELBHCPK5RJ5KKPWNYA4M2ZNS34EA)
-
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(467).png?token=GHSAT0AAAAAACNELBHDGSZSNJ6XSMEYCAGWZNS34FQ)
-
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(468).png?token=GHSAT0AAAAAACNELBHDCXH4NM2BBN6HW3IEZNS34HA)
-
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(469).png?token=GHSAT0AAAAAACNELBHCRYJKBVA66C3UE62QZNS34IQ)
-
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(470).png?token=GHSAT0AAAAAACNELBHCNZGR7XOWPYBMNJ7AZNS34NA)
-
+![Screenshot (466)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/8b3e6010-73d6-4159-8d9f-e71d5e077ddd)
+![Screenshot (467)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/3befa930-9e9a-4d78-8c81-e29f8472485c)
+![Screenshot (468)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/7ab7c63f-e9d3-42ac-9d06-7896cbb4c4af)
+![Screenshot (469)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/4dde3e3c-c92d-4d9c-9343-856fa072e2bb)
+![Screenshot (470)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/84ff30a8-145a-448c-a73d-30dda10a909a)
+![Screenshot (471)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/b49b6188-9dd3-4fdf-b3fd-bda123e7febb)
 
 
 
@@ -252,10 +247,11 @@ Source : Anywhere IPv4
 
 As per the below Screenshots the application load balancer is equally manages the load and using both availability zones.
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(482).png?token=GHSAT0AAAAAACNELBHCO6KNFVEEW2AUAP3QZNS3XEA)
+![Screenshot (482)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/12d6f879-49a2-4478-803a-dfafda4d37df)
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(483).png?token=GHSAT0AAAAAACNELBHCBPR644IIVGJCMJHSZNS3XPA)
+![Screenshot (483)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/e6a44be9-0117-41e6-bcbf-c0ba9ee7e4a8)
 
+![Screenshot (486)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/1cc4326c-15fe-46f7-b44a-f060d75de43a)
 
 
 ## Tech Stack
