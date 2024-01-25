@@ -251,6 +251,8 @@ As per the below Screenshots the application load balancer is equally manages th
 
 ![Screenshot (483)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/e6a44be9-0117-41e6-bcbf-c0ba9ee7e4a8)
 
+![Screenshot (486)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/1cc4326c-15fe-46f7-b44a-f060d75de43a)
+
 
 ## Tech Stack
 
