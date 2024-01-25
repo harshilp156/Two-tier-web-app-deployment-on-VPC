@@ -117,17 +117,15 @@ Maximum Desired capacity : 4
 
 Here I have selected 1 instances as my Minimum capacity and 4 instance as my maximum capacity,the auto scaling group will launch and terminate instances according to the demand.
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(466).png?token=GHSAT0AAAAAACNELBHDBWN3OBDE4MVBFGXAZNS3R5A)
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(466).png?token=GHSAT0AAAAAACNELBHCPK5RJ5KKPWNYA4M2ZNS34EA)
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(467).png?token=GHSAT0AAAAAACNELBHDPS6ARQIE2D7YXRNQZNS3SGQ)
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(467).png?token=GHSAT0AAAAAACNELBHDGSZSNJ6XSMEYCAGWZNS34FQ)
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(468).png?token=GHSAT0AAAAAACNELBHCTPHYXVMXFETSN7FYZNS3SQQ)
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(468).png?token=GHSAT0AAAAAACNELBHDCXH4NM2BBN6HW3IEZNS34HA)
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(469).png?token=GHSAT0AAAAAACNELBHC7PZZ6YRJBXBX3MJQZNS3TGQ)
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(469).png?token=GHSAT0AAAAAACNELBHCRYJKBVA66C3UE62QZNS34IQ)
 
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(470).png?token=GHSAT0AAAAAACNELBHCRIJ7ETQ4BNVJXL2GZNS3U5Q)
-
-![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(471).png?token=GHSAT0AAAAAACNELBHDO7TTFU3N3CFCCTPKZNS3VQA)
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(470).png?token=GHSAT0AAAAAACNELBHCNZGR7XOWPYBMNJ7AZNS34NA)
 
 
 
