@@ -67,6 +67,7 @@ Number of private subnets : 2
 
 NAT gateways : 1 per avaibility zones
 
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(461).png?token=GHSAT0AAAAAACNELBHDSZCW4625R3R5PDRQZNS3LPA)
 
 
 
@@ -115,6 +116,19 @@ Minimum Desired capacity : 1
 Maximum Desired capacity : 4
 
 Here I have selected 1 instances as my Minimum capacity and 4 instance as my maximum capacity,the auto scaling group will launch and terminate instances according to the demand.
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(466).png?token=GHSAT0AAAAAACNELBHDBWN3OBDE4MVBFGXAZNS3R5A)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(467).png?token=GHSAT0AAAAAACNELBHDPS6ARQIE2D7YXRNQZNS3SGQ)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(468).png?token=GHSAT0AAAAAACNELBHCTPHYXVMXFETSN7FYZNS3SQQ)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(469).png?token=GHSAT0AAAAAACNELBHC7PZZ6YRJBXBX3MJQZNS3TGQ)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(470).png?token=GHSAT0AAAAAACNELBHCRIJ7ETQ4BNVJXL2GZNS3U5Q)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(471).png?token=GHSAT0AAAAAACNELBHDO7TTFU3N3CFCCTPKZNS3VQA)
+
 
 
 
@@ -235,6 +249,11 @@ Port range : 80
 Source : Anywhere IPv4
 
 As per the below Screenshots the application load balancer is equally manages the load and using both availability zones.
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(482).png?token=GHSAT0AAAAAACNELBHCO6KNFVEEW2AUAP3QZNS3XEA)
+
+![App Screenshot](https://raw.githubusercontent.com/harshilp156/Two-tier-web-app-deployment-on-VPC/main/screenshots/Screenshot%20(483).png?token=GHSAT0AAAAAACNELBHCBPR644IIVGJCMJHSZNS3XPA)
+
 
 
 ## Tech Stack
