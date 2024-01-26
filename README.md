@@ -1,71 +1,70 @@
 
-# 2-Tier Web app deployment on vpc 
+# 2-Tier Web App Deployment on AWS VPC
 
-This project demonstated how to create VPC (virtual private cloud) that you can use for server to deploy two tier web application in production environment.In this project I have used aws management console to complete all tasks. 
-
-
+This project demonstrates the creation of a Virtual Private Cloud (VPC) on AWS for deploying a two-tier web application in a production environment. The AWS Management Console is utilized for all tasks in this project. 
 
 
 
 
-## VPC work flow
 
-As per the below architecture diagram,the vpc has public and private subnet in two Avaibility zones.
+
+## VPC Workflow
+
+As depicted in the architecture diagram below, the VPC comprises public and private subnets in two Availability Zones.
  
 ![vpc-example-private-subnets](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/764a426d-cca0-4c3c-9e24-508604257c72)
 
 
-Each public subnet has NAT gateway and an Application load balancer node.
+Public subnets include a NAT gateway and an Application Load Balancer node each.
 
-The server run in private subnet and are launched and terminated automaticall by Auto scaling group.
+Servers operate in private subnets, automatically launched and terminated by an Auto Scaling group.
 
-The server receive trafic from the Application load balancer.
+Servers receive traffic from the Application Load Balancer.
 
-The server can connect to internet using the NAT gateway.
+Servers can connect to the internet via the NAT gateway.
 
-The servers can connect to Amazon S3 by using a gateway VPC endpoint.
+Servers can connect to Amazon S3 using a Gateway VPC Endpoint.
 
-High Avaibility : To insure the Avaibility we have deployed application in two Avaibility zones(us-east-1,us-east-2).
+High Avaibility : To ensure availability, the application is deployed in two Availability Zones (us-east-1, us-east-2).
 
-Bastion hosts or Jump server : The application sare deployed in private subnets ,so we can not directly ssh into these servers. To securely log into private subnets I have used bastion hosts ,which are deployed in the each public subnets.
+Bastion hosts or Jump server : As the application is deployed in private subnets, direct SSH access is not possible. Bastion hosts are deployed in each public subnet to securely log into private subnets.
 
-NAT gateway : If the application (inside private subnet) wants to access the internet for any reasons (e.g, to download any packages) then it can you use NAT gateway to securely use the internet (without exposing private ip address).
-It acts as a mask for application over it's private ip address.
+NAT gateway : If applications in private subnets need internet access, NAT gateway provides secure internet usage without exposing private IP addresses. It acts as a mask for the application over its private IP address.
 
-Auto scaling group : To insure the reliability I have used Auto scaling groups(in each private subnet).If the trafic rises for any occasion then the auto scaling group can immediately take the decision and automatically scale up the server to meet the demand and also scale down if the trafic is low.   
+Auto scaling group : To ensure reliability, Auto Scaling groups are used in each private subnet. These groups can dynamically scale up or down based on traffic, ensuring optimal resource utilization. 
 
-Load balancer : The load balancer equally balance the load between multiple server.It continuously monitors the health of servers and destribute the trafic accordingly.
-
+Load balancer : The load balancer evenly distributes traffic among multiple servers, continuously monitoring server health and adjusting traffic distribution accordingly.
 
 
-## Step : 1 Create A VPC
+
+## Step: 1 Create A VPC
 
 Here I have started with creating VPC.
 
-Select VPC and more, the best thing is aws will atutomatically create public subnets and private subnet in two avaibility zones.
+Select VPC and more, the best thing is aws will automatically create public subnets and private subnet in two availability zones.
 
-I live in ontario that is the reason I have selected us-east-1 as my region.
+I live in Ontario, that is the reason I have selected us-east-1 as my region.
 
 Along with subnets the Route Tables are also created by AWS.
 
-Route tables : Route table is the one which is responsible to define how to route trafic with in the subnet.Both public subnets are attached to the route table ,which has the destination to the internet gateway so that the trafic flows into the public subnets.
+Route tables: Route table is the one which is responsible to define how to route traffic within the subnet. Both public subnets are attached to the route table, which has the destination to the internet gateway so that the traffic flows into the public subnets.
 
-Also both the private subnets are attached to their each route tables , and these route tables have destination to VPC endpoint so that these private subnets can connect to Amazon S3.
+Also, both the private subnets are attached to each route tables, and these route tables have destination to VPC endpoint so that these private subnets can connect to Amazon S3.
 
-Here my IP Address Would be : 10.0.0.0/16 
+Here my IP Address Would be: 10.0.0.0/16. 
  
-It means 65,536IPS are allocted towads my VPC.
+It means 65,536IPS are allocated towards my VPC.
 In simple words I can allocate this IP address 10.0.0.0/16 to 65,535 instances.
 
-I have selected IPV4 CIDR block for this priject.
+I have selected IPV4 CIDR block for this project.
 
-Number of avaibility zones : 2
+Number of availability zones: 2
 
-Number of public subnets : 2
+Number of public subnets: 2
 
-Number of private subnets : 2
+Number of private subnets: 2
 
-NAT gateways : 1 per avaibility zones
+NAT gateways: 1 per availability zones
 
 
 ![App Screenshot](screenshots/Screenshot (461).png?raw=true "ss")
@@ -75,49 +74,50 @@ NAT gateways : 1 per avaibility zones
 
 
 
-## Step : 2 Create Auto Scaling Group
+## Step: 2 Create Auto Scaling Group
 
 Here I have created Auto scaling groups to launch and terminated the Ec2 instances (servers) as per the needs automatically.
 
-In aws auto scaling groups can not be created directly, first we have to create launch template which can be used across multiple auto scaling groups.
+In aws auto scaling groups cannot be created directly, first we have to create launch template which can be used across multiple auto scaling groups.
 
 I have used Ubuntu server as my AMI.
 
 My instance type is t2.micro which is free tier eligible.
 
-Key pair to SSH into my instance.
+Key pair to SSH in my instance.
 
-Created new security groups wihh below inbound security group rules.
+Created new security groups with below inbound security group rules.
 
-1 . SSH Source 
+1. SSH Source 
 
-Type : Anywhere 
+Type: Anywhere 
 
-Port range : 22
+Port range: 22
 
-To securely loginto my instance.
+To securely login to my instance.
 
-2 . Custome TCP 
+2. Custom TCP 
 
-source Type : Anywhere
+source Type: Anywhere
 
-Port range : 8000
+Port range: 8000
 
 Here I ran my application on python server on port range 8000.
 
 Now created auto scaling group with this launch template and selected the vpc which I have created.
 
-Availability Zone and subnets : selected both private subnets in which the auto scaling group will be deployed.
+Availability Zone and subnets: selected both private subnets in which the auto scaling group will be deployed.
 
-No load balancer is attahced here.
+No load balancer is attached here.
 
-Desired capacity : 2
+Desired capacity: 2
 
-Minimum Desired capacity : 1 
+Minimum Desired capacity: 1 
 
-Maximum Desired capacity : 4
+Maximum Desired capacity: 4
 
-Here I have selected 1 instances as my Minimum capacity and 4 instance as my maximum capacity,the auto scaling group will launch and terminate instances according to the demand.
+Here I have selected 1 instances as my Minimum capacity and 4 instance as my maximum capacity, the auto scaling group will launch and terminate instances according to the demand.
+
 
 ![Screenshot (466)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/8b3e6010-73d6-4159-8d9f-e71d5e077ddd)
 ![Screenshot (467)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/3befa930-9e9a-4d78-8c81-e29f8472485c)
@@ -128,64 +128,64 @@ Here I have selected 1 instances as my Minimum capacity and 4 instance as my max
 
 
 
-## Step : 3 Create Bastion Host / Jump server
+## Step: 3 Create Bastion Host / Jump server
 
-Both the instance does not have public IP address as these are in private subnet.
+Both instances do not have public IP addresses as these are in private subnet.
 
-So in order to securely log into these instances I have created bastion hosts in each public subnet.
+So, in order to securely log into these instances, I have created bastion hosts in each public subnet.
 
 Host 1: Configuration
 
-AMI : Ubuntu Server
+AMI: Ubuntu Server
 
-Instance Type : t2.micro
+Instance Type: t2.micro
 
 Selected the VPC which I have created.
 
-Subnet : Public us-east-1a 
+Subnet: Public us-east-1a 
 
-Auto assign Public IP : Enable
+Auto assign Public IP: Enable
 
-Created security Group 
+Created security Group. 
 
 Inbound security Group Rules 
 
-Type : SSH
+Type: SSH
 
-Source Type : Anywhere
+Source Type: Anywhere
 
 Host 2: Configuration
 
-AMI : Ubuntu Server
+AMI: Ubuntu Server
 
-Instance Type : t2.micro
+Instance Type: t2.micro
 
 Selected the VPC which I have created.
 
-Subnet : Public us-east-1b 
+Subnet: Public us-east-1b 
 
-Auto assign Public IP : Enable
+Auto assign Public IP: Enable
 
-Created security Group 
+Created security Group. 
 
 Inbound security Group Rules 
 
-Type : SSH
+Type: SSH
 
-Source Type : Anywhere
+Source Type: Anywhere
 
-## Step : 4 Install Application in subnets.
+## Step: 4 Install Application in subnets.
 
-Here to securely login and install application in each private subnet ,I have used bastion hosts which are deployed in each public subnets and through these bastion hosts or jump server I have logged in to the private subnets and installed my application.
+Here to securely login and install application in each private subnet, I have used bastion hosts which are deployed in each public subnet and through these bastion hosts or jump server I have logged in to the private subnets and installed my application.
 
-To be able to log into private subnet I need to have a key pair inside my each bastion host.
+To be able to log into private subnet I need to have a key pair inside my each bastion hosts.
 
 
 
 
 ## Copy command
 
-So first I copy my pem file in my bastion host using below command.
+So first I copy my pem file in my bastion host using the command below.
 
 
 ```bash
@@ -225,26 +225,27 @@ Now I have created html file using vim edior.
 ```
 
 
-## Step : 5 Creating Application Load Balancer
+## Step: 5 Creating Application Load Balancer
 
 
 Application Load Balancer should be internet facing (public subnet) with IPv4 IP address type.
 
-Selected the vpc which I have created for this project and also selected public subnets of us-east-1a and us-east-1b.
+Selected the vpc which I have created for this project and selected public subnets of us-east-1a and us-east-1b.
 
-Security Group : Myvpc Security Group
+Security Group: My vpc Security Group
 
-Also we need a target group as well for the load balancer and add that target group with this load balancer.
+Also, we need a target group as well for the load balancer and add that target group with this load balancer.
 
-Add below inbound rule http , port range 80 , trafic in myvpc Security group to access the site.
+Add below inbound rule http, port range 80 , traffic in my vpc Security group to access the site.
 
-Type : http
+Type: http
 
-Port range : 80
+Port range: 80
 
-Source : Anywhere IPv4
+Source: Anywhere IPv4
 
-As per the below Screenshots the application load balancer is equally manages the load and using both availability zones.
+As per the below Screenshots the application load balancer equally manages the load and using both availability zones.
+
 
 ![Screenshot (482)](https://github.com/harshilp156/Two-tier-web-app-deployment-on-VPC/assets/67538347/12d6f879-49a2-4478-803a-dfafda4d37df)
 
