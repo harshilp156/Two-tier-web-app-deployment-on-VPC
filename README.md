@@ -25,7 +25,7 @@ Servers can connect to the internet via the NAT gateway.
 
 Servers can connect to Amazon S3 using a Gateway VPC Endpoint.
 
-High Avaibility : To ensure availability, the application is deployed in two Availability Zones (us-east-1, us-east-2).
+High Availability : To ensure availability, the application is deployed in two Availability Zones (us-east-1, us-east-2).
 
 Bastion hosts or Jump server : As the application is deployed in private subnets, direct SSH access is not possible. Bastion hosts are deployed in each public subnet to securely log into private subnets.
 
