@@ -1,7 +1,7 @@
 
-# 2-Tier Web App Deployment on AWS VPC
+# Web App Deployment on AWS VPC
 
-This project demonstrates the creation of a Virtual Private Cloud (VPC) on AWS for deploying a two-tier web application in a production environment. The AWS Management Console is utilized for all tasks in this project. 
+This project demonstrates the creation of a Virtual Private Cloud (VPC) on AWS for deploying a web application in a production environment. The AWS Management Console is utilized for all tasks in this project. 
 
 
 
